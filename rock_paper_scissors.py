@@ -27,31 +27,19 @@ scissors = '''
 
 #Write your code below this line 👇
 import random
-machine_choise = random.randint(0,2)
-num_imput= input("Choose rock, paper or scissors:\nType 0 for rock , type 1 for paper and 2 for scissors \n" )
-human_choise = int(num_imput)
-if human_choise == "0":
-  print(rock)
-  print(machine_choise)
-  if human_choise > machine_choise:
-    print("You Win")
-  else:
-    print("You lose")
-elif human_choise == "1":
-  print(paper)
-  print(machine_choise)
-  if human_choise > machine_choise:
-    print("You Win")
-  else:
-    print("You lose")
-elif human_choise == "2":
-  print(scissors)
-  print(machine_choise)
-  if human_choise > machine_choise:
-    print("You Win")
-  else:
-    print("You lose")
+options = [rock, paper, scissors]
+human_input = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n")
+human_choice = int(human_input)
+machine_choice = random.randint(0,2)
+
+print("You Choice")
+print(options[human_choice])
+print("Computer Choice")
+print(options[machine_choice])
+
+if human_choice == machine_choice:
+  print("Draw!")
+elif (human_choice == 0 and machine_choice == 2) or (human_choice == 1 and machine_choice == 0) or (human_choice == 2 and machine_choice == 1 ):
+  print("You Win!")
 else:
-  print(human_choise)
-  print(machine_choise)
-  print("Is a Draw! try again")
+  print("You Lose!")
