@@ -28,9 +28,13 @@ scissors = '''
 #Write your code below this line 👇
 import random
 options = [rock, paper, scissors]
-human_input = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n")
+human_input = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors \n")
 human_choice = int(human_input)
 machine_choice = random.randint(0,2)
+
+if human_choice >= 3 or human_choice < 0:
+  print("You lose, for enter an invalid number")
+
 
 print("You Choice")
 print(options[human_choice])
